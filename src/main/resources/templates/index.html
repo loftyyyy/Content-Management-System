@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Test 101</title>
+    <link rel="stylesheet" th:href="@{/main.css}">
+</head>
+<body class="bg-slate-50">
+    <header class="container mx-auto">
+        <h1 class="p-8 text-4xl">Test 101</h1>
+        <p class="bg-amber-500">Hello I am, Rho </p>
+    </header>
+    <div class="border-8">
+        <ul th:each="name : ${names}">
+            <li th:text="${name}"></li>
+        </ul>
+    </div>
+</body>
+</html>
