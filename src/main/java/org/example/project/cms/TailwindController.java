@@ -14,8 +14,37 @@ public class TailwindController {
 
     @RequestMapping
     public String index(Model model) {
-        List<String> names = new ArrayList<>(List.of("Alice", "Bob", "Charlie"));
-        model.addAttribute( "names", names);
+        model.addAttribute( "activeMenuItem", "dashboard" );
+        return "index";
+    }
+
+    @RequestMapping("/team")
+    public String team(Model model){
+        model.addAttribute( "activeMenuItem", "team" );
+        return "index";
+    }
+
+    @RequestMapping("/project")
+    public String project(Model model){
+        model.addAttribute( "activeMenuItem", "project" );
+        return "index";
+    }
+
+    @RequestMapping("/calendar")
+    public String calendar(Model model){
+        model.addAttribute( "activeMenuItem", "calendar" );
+        return "index";
+    }
+
+    @RequestMapping("/document")
+    public String document(Model model){
+        model.addAttribute( "activeMenuItem", "document" );
+        return "index";
+    }
+
+    @RequestMapping("/report")
+    public String report(Model model){
+        model.addAttribute( "activeMenuItem", "report" );
         return "index";
     }
 }
