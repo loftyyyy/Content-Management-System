@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org" xmlns:x-transition="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       lang="en"
+      layout:decorate="~{/layouts/layout}">
       class="h-full bg-gray-100">
 <head>
     <meta charset="UTF-8">
@@ -12,33 +14,15 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" th:href="@{/main.css}">
 </head>
-<body class="h-full">
-<div x-data="sidebarMenu()"
-     @keydown.window.escape="closeSidebar">
-    <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-    <div th:replace="fragments/sidebar-menu.html :: mobile"></div>
-
-    <div th:replace="fragments/sidebar-menu.html :: desktop"></div>
-
-    <!-- Static sidebar for desktop -->
-    <div class="flex flex-1 flex-col lg:pl-64">
-        <div th:replace="fragments/top-menu.html :: menu">
-
-            <main class="flex-1">
-                <div class="py-6">
-                    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                        <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
-                    </div>
-                    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                        <!-- Your content -->
-                    </div>
-                </div>
-            </main>
+<body>
+    <div layout:fragment="page-content">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            Dashboard
+        </div>
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <!-- Your content -->
+            Hello, World!
+        </div>
     </div>
-
-</div>
-    <script defer th:src="@{https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js}"></script>
-    <script th:src="@{/js/user-popup-menu.js}"></script>
-    <script th:src="@{/js/user-sidebar-menu.js}"> </script>
 </body>
 </html>

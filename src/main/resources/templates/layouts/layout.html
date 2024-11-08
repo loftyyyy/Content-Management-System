@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+>
+<head>
+    <meta charset="UTF-8">
+    <title>$LAYOUT_TITLE - $CONTENT_TITLE</title>
+</head>
+<body class="h-full">
+
+    <div x-data="sidebarMenu()"
+         @keydown.window.escape="closeSidebar">
+        <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+        <div th:replace="fragments/sidebar-menu.html :: mobile"></div>
+
+        <div th:replace="fragments/sidebar-menu.html :: desktop"></div>
+
+        <!-- Static sidebar for desktop -->
+        <div class="flex flex-1 flex-col lg:pl-64">
+            <div th:replace="fragments/top-menu.html :: menu">
+
+                <main class="flex-1">
+                    <div class="py-6" layout:fragment="page-content">
+
+                    </div>
+                </main>
+            </div>
+        </div>
+
+    <script defer th:src="@{https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js}"></script>
+    <script th:src="@{/js/user-popup-menu.js}"></script>
+    <script th:src="@{/js/user-sidebar-menu.js}"> </script>
+
+
+</body>
+</html>
