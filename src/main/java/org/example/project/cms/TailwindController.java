@@ -2,6 +2,7 @@ package org.example.project.cms;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -21,6 +22,13 @@ public class TailwindController {
     public String team(Model model){
         model.addAttribute( "activeMenuItem", "team" );
         return "index";
+    }
+
+    @RequestMapping("/team/{id}")
+    public String getTeam(@PathVariable("id") String id, Model model){
+        model.addAttribute("id", id);
+        return "Test";
+
     }
 
     @RequestMapping("/project")
