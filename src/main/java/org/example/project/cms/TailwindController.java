@@ -24,6 +24,12 @@ public class TailwindController {
         return "index";
     }
 
+    @RequestMapping("/user")
+    public String user(Model model){
+        model.addAttribute( "activeMenuItem", "user" );
+        return "user/list";
+    }
+
     @RequestMapping("/team/{id}")
     public String getTeam(@PathVariable("id") String id, Model model){
         model.addAttribute("id", id);

@@ -74,6 +74,7 @@
                 <nav class="space-y-1 px-2">
                     <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
                     <a th:replace="~{fragments/menu-item.html :: menu-item('/', 'Dashboard', 'dashboard-icon', 'dashboard')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/user', 'User', 'user-group', 'user')}"></a>
                     <a th:replace="~{fragments/menu-item.html :: menu-item('/team', 'Team', 'team-icon', 'team')}"></a>
                     <a th:replace="~{fragments/menu-item.html :: menu-item('/project', 'Projects', 'project-icon', 'project')}"></a>
                     <a th:replace="~{fragments/menu-item.html :: menu-item('/calendar', 'Calendar', 'calendar-icon', 'calendar')}"></a>
@@ -104,6 +105,7 @@
             <div class="mt-5 flex flex-grow flex-col">
                 <nav class="flex-1 space-y-1 px-2 pb-4">
                     <a th:replace="~{fragments/menu-item.html :: menu-item('/', 'Dashboard', 'dashboard-icon', 'dashboard')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/user', 'User', 'user-group', 'user')}"></a>
                     <a th:replace="~{fragments/menu-item.html :: menu-item('/team', 'Team', 'team-icon', 'team')}"></a>
                     <a th:replace="~{fragments/menu-item.html :: menu-item('/project', 'Projects', 'project-icon', 'project')}"></a>
                     <a th:replace="~{fragments/menu-item.html :: menu-item('/calendar', 'Calendar', 'calendar-icon', 'calendar')}"></a>
