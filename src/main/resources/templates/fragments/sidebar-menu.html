@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:x-transition="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" th:href="@{/main.css}">
+</head>
 
 <div th:fragment="mobile" class="relative z-40 lg:hidden" role="dialog" aria-modal="true"
      x-show="isVisible()">
@@ -73,13 +77,13 @@
             <div class="mt-5 h-0 flex-1 overflow-y-auto">
                 <nav class="space-y-1 px-2">
                     <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/', 'Dashboard', 'dashboard-icon', 'dashboard')}"></a>
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/user', 'User', 'user-group', 'user')}"></a>
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/team', 'Team', 'team-icon', 'team')}"></a>
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/project', 'Projects', 'project-icon', 'project')}"></a>
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/calendar', 'Calendar', 'calendar-icon', 'calendar')}"></a>
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/document', 'Documents', 'document-icon', 'document')}"></a>
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/report', 'Reports', 'report-icon', 'report')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/', #{menu.dashboard}, 'dashboard-icon', 'dashboard')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/user', #{user.title}, 'user-group', 'user')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/team', #{menu.teams}, 'team-icon', 'team')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/project', #{menu.projects}, 'project-icon', 'project')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/calendar', #{menu.calendar}, 'calendar-icon', 'calendar')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/document', #{menu.documents}, 'document-icon', 'document')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/report', #{menu.reports}, 'report-icon', 'report')}"></a>
 
                 </nav>
             </div>
@@ -104,13 +108,13 @@
 
             <div class="mt-5 flex flex-grow flex-col">
                 <nav class="flex-1 space-y-1 px-2 pb-4">
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/', 'Dashboard', 'dashboard-icon', 'dashboard')}"></a>
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/user', 'User', 'user-group', 'user')}"></a>
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/team', 'Team', 'team-icon', 'team')}"></a>
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/project', 'Projects', 'project-icon', 'project')}"></a>
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/calendar', 'Calendar', 'calendar-icon', 'calendar')}"></a>
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/document', 'Documents', 'document-icon', 'document')}"></a>
-                    <a th:replace="~{fragments/menu-item.html :: menu-item('/report', 'Reports', 'report-icon', 'report')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/', #{menu.dashboard}, 'dashboard-icon', 'dashboard')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/user', #{user.title}, 'user-group', 'user')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/team', #{menu.teams}, 'team-icon', 'team')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/project', #{menu.projects}, 'project-icon', 'project')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/calendar', #{menu.calendar}, 'calendar-icon', 'calendar')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/document', #{menu.documents}, 'document-icon', 'document')}"></a>
+                    <a th:replace="~{fragments/menu-item.html :: menu-item('/report', #{menu.reports}, 'report-icon', 'report')}"></a>
                 </nav>
             </div>
         </div>
