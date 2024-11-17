@@ -6,3 +6,5 @@ import jakarta.persistence.Entity;
 //public class User extends AbstractEntity<UserId> {
 //
 //}
+
+// PAGE 123
