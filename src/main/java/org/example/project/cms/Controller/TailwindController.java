@@ -1,4 +1,4 @@
-package org.example.project.cms;
+package org.example.project.cms.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
